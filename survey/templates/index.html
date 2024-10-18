@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Preference Survey</title>
+</head>
+<body>
+    <h1>Food Preference Survey</h1>
+    <form method="POST" action="/submit">
+        {% for i, question in enumerate(questions) %}
+            <p>Help us find a perfect Menu</p>
+            <input type="radio" name="question_{{ i }}" value="Yes"> Yes<br>
+            <input type="radio" name="question_{{ i }}" value="No"> No<br>
+            <input type="radio" name="question_{{ i }}" value="Neutral"> Neutral<br>
+        {% endfor %}
+        <input type="submit" value="Submit Answers">
+    </form>
+</body>
+</html>

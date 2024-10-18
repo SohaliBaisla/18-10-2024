@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Results</title>
+</head>
+<body>
+    <h1>Survey Results</h1>
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Answers</th>
+        </tr>
+        {% for i, question in enumerate(questions) %}
+            <tr>
+                <td>{{ question }}</td>
+                <td>
+                    {% for answer in answers %}
+                        {{ answer[i] }},
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
