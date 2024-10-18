@@ -4,6 +4,8 @@ app = Flask(__name__)
 
 questions = ['Do you like Italian?', 'Do you like Japenese?', 'Do you like Mexican?', 'Do you like Indian?']
 
+file_path = 'survey_answers.txt'
+
 def load_answers():
     try:
         with open('survey_answers.txt', 'r') as file:
@@ -19,7 +21,7 @@ answers = load_answers()
 
 @app.route('/')
 def index():
-    return render_template('survey.html', questions=questions)
+    return render_template('index.html', questions=questions)
 
 @app.route('/submit', methods=['POST'])
 def submit():
@@ -29,7 +31,8 @@ def submit():
 
 @app.route('/result')
 def results():
-    return render_template('result.html', questions=questions, answers=answers)
+    answers=load_answers()
+    return render_template('result.html', questions=questions, answers=answers, enumerate=enumerate)
 
 if __name__ == '__main__':
     app.run( host="0.0.0.0", port=5000)

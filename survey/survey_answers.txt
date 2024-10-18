@@ -1,0 +1,7 @@
+Yes,No,Neutral,Yes
+Yes,No,Neutral,Yes
+Yes,No,No,Neutral
+No,Neutral,No,No
+Yes,No,Neutral,Neutral
+Yes,No,Neutral,Neutral
+Neutral,No,Yes,Neutral
